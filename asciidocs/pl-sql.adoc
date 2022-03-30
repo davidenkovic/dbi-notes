@@ -1,0 +1,34 @@
+= PL/SQL und SQL
+
+== Was ist eine Prozedur?
+
+*Antwort:* +
+SQL Block ohne return.
+
+image::images/image-2022-03-30-22-12-50-946.png[]
+
+== Was ist eine Funktion?
+
+*Antwort:* +
+SQL Block mit return.
+
+image::images/image-2022-03-30-22-13-01-336.png[]
+
+== Was ist ein Package?
+
+*Antwort:* +
+Ist eine benannte Sammlung von Prozeduren, Funktionen, Typen und Variablen.
+
+== Wie führt man Prozeduren oder Funktionen aus
+
+*Antwort:* +
+
+image::images/image-2022-03-30-22-14-23-545.png[]
+
+== Joints
+
+*Antwort:* +
+
+image::images/image-2022-03-30-22-16-31-311.png[]
+
+image::images/image-2022-03-30-22-16-49-025.png[]

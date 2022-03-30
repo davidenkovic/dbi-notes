@@ -22,3 +22,12 @@ https://davidenkovic.github.io/dbi-notes/dcl-ddl.html[DCL-DDL]
 
 == NoSQL
 
+https://davidenkovic.github.io/school-notes/nosql.html[NoSQL]
+
+== JPA
+
+https://davidenkovic.github.io/school-notes/jpa-test.html[JPA]
+
+== PL/SQL
+
+https://davidenkovic.github.io/school-notes/pl-sql.html[PL-SQL]
