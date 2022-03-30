@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>DBI Notes</title>
+<title>NoSQL</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,90 +439,117 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>DBI Notes</h1>
+<h1>NoSQL</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_xml">1. XML</a></li>
-<li><a href="#_datenmodellierung">2. Datenmodellierung</a></li>
-<li><a href="#_concurrency">3. Concurrency</a></li>
-<li><a href="#_datawarehouse">4. Datawarehouse</a></li>
-<li><a href="#_dcl_ddl">5. DCL-DDL</a></li>
-<li><a href="#_nosql">6. NoSQL</a></li>
-<li><a href="#_jpa">7. JPA</a></li>
-<li><a href="#_plsql">8. PL/SQL</a></li>
+<li><a href="#_was_bedeutet_nosql">1. Was bedeutet NoSQL</a></li>
+<li><a href="#_was_ist_die_cap_theorem">2. Was ist die CAP-Theorem?</a></li>
+<li><a href="#_welche_grundbefehle_gibt_es_für_mongodb">3. Welche Grundbefehle gibt es für MongoDB</a></li>
+<li><a href="#_crud">4. CRUD</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_xml"><a class="anchor" href="#_xml"></a>1. XML</h2>
+<h2 id="_was_bedeutet_nosql"><a class="anchor" href="#_was_bedeutet_nosql"></a>1. Was bedeutet NoSQL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/xml.html">XML</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="paragraph">
+<p>Not Only SQL<br>
+Datenbanksystem mit nicht-relationalem Ansatz</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datenmodellierung"><a class="anchor" href="#_datenmodellierung"></a>2. Datenmodellierung</h2>
+<h2 id="_was_ist_die_cap_theorem"><a class="anchor" href="#_was_ist_die_cap_theorem"></a>2. Was ist die CAP-Theorem?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/datenmodellierung.html">Datenmodellierung</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Konsistenz</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Jeder Leser bekommt die aktuellsten Daten</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Verfügbarkeit</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Man bekommt immer eine Antwort</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ausfalltoleranz</p>
+<div class="ulist">
+<ul>
+<li>
+<p>System arbeitet auch weiter, wenn Nachrichten zu spät (oder gar nicht) ankommen</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ein System kann nicht alle 3 gleichzeitig garantieren</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-22-00-12-028.png" alt="image 2022 03 30 22 00 12 028">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_concurrency"><a class="anchor" href="#_concurrency"></a>3. Concurrency</h2>
+<h2 id="_welche_grundbefehle_gibt_es_für_mongodb"><a class="anchor" href="#_welche_grundbefehle_gibt_es_für_mongodb"></a>3. Welche Grundbefehle gibt es für MongoDB</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/concurrency.html">Concurrency</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="paragraph">
+<p>Datenbank anlegen und verwenden:<br>
+<code>use insydb</code></p>
+</div>
+<div class="paragraph">
+<p>Collection anlegen<br>
+<code>db.createCollection(“students”);</code></p>
+</div>
+<div class="paragraph">
+<p>Hilfe anzeigen<br>
+<code>db.students.help();</code></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datawarehouse"><a class="anchor" href="#_datawarehouse"></a>4. Datawarehouse</h2>
+<h2 id="_crud"><a class="anchor" href="#_crud"></a>4. CRUD</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/datawarehouse.html">Datawarehouse</a></p>
+<p><strong>Antwort:</strong><br></p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-22-02-32-779.png" alt="image 2022 03 30 22 02 32 779">
 </div>
-</div>
-<div class="sect1">
-<h2 id="_dcl_ddl"><a class="anchor" href="#_dcl_ddl"></a>5. DCL-DDL</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/dcl-ddl.html">DCL-DDL</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_nosql"><a class="anchor" href="#_nosql"></a>6. NoSQL</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://davidenkovic.github.io/school-notes/nosql.html">NoSQL</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_jpa"><a class="anchor" href="#_jpa"></a>7. JPA</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://davidenkovic.github.io/school-notes/jpa-test.html">JPA</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_plsql"><a class="anchor" href="#_plsql"></a>8. PL/SQL</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://davidenkovic.github.io/school-notes/pl-sql.html">PL-SQL</a></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-30 20:03:53 UTC
+Last updated 2022-03-30 20:04:15 UTC
 </div>
 </div>
 </body>
