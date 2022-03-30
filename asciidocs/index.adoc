@@ -1,0 +1,12 @@
+= DBI Notes
+
+== XML
+
+*Antwort:* +
+https://davidenkovic.github.io/dbi-notes/xml.html[XML]
+
+== Datenmodellierung
+
+*Antwort:* +
+https://davidenkovic.github.io/dbi-notes/datenmodellierung.html[Datenmodellierung]
+
