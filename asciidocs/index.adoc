@@ -2,11 +2,23 @@
 
 == XML
 
-*Antwort:* +
 https://davidenkovic.github.io/dbi-notes/xml.html[XML]
 
 == Datenmodellierung
 
-*Antwort:* +
 https://davidenkovic.github.io/dbi-notes/datenmodellierung.html[Datenmodellierung]
+
+== Concurrency
+
+https://davidenkovic.github.io/dbi-notes/concurrency.html[Concurrency]
+
+== Datawarehouse
+
+https://davidenkovic.github.io/dbi-notes/datawarehouse.html[Datawarehouse]
+
+== DCL-DDL
+
+https://davidenkovic.github.io/dbi-notes/dcl-ddl.html[DCL-DDL]
+
+== NoSQL
 

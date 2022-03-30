@@ -1,0 +1,80 @@
+= ConCurrency
+
+== Was bedeutet ACID?
+
+*Antwort:* +
+
+* Atomicity: +
+Entweder werden alle oder keine Werteänderungen einer Transaktion in den Datenbankzustand übernommen
+
+* Consistency: +
+Am Anfang und am Ende einer Transaktion ist alles consistent.
+
+
+* Isolation: +
+Transaktionen sollen sich nicht gegenseitig beeinflussen. Gelöst mit
+Isolation-ebenen oder Locks.
+
+
+* Durability: +
+Daten sind dauerhaft gespeichert auch bei Stromausfall gehen sie nicht verloren.
+
+== Warum heißt es Atomicity?
+
+*Antwort:* +
+Atom ist unteilbar
+
+== Welches gegenstück zu ACID gibt es?
+
+*Antwort:* +
+NoSQL-DBs verwenden cap-theorem
+
+
+== Was bedeutet Dirty Read?
+
+*Antwort:* +
+Daten welche in einer noch nicht geschlossenen Datenbank liegen werden gelesen
+
+== Was bedeutet Dirty Write?
+
+*Antwort:* +
+Wenn zwei Transaktionen sich "vermischen" (Daten von mehreren Transaktionen sich kreuzen)
+
+== FÜr was werden Sperren verwendet?
+
+*Antwort:* +
+Sperren werden in Datenbanksystemen eingesetzt, um die Forderung der Isolation des ACID-Prinzips bei Transaktionen zu erfüllen
+
+==  Was sind Transaktionen
+
+*Antwort:* +
+Transaktionen sind zusammenhängende Befehle, wo entweder alle ausgeführt werden
+(commit) oder alle nicht ausgeführt werden (rollback). BSP: Überweisung.
+
+
+
+== Für was werden Timeouts verwendet?
+
+*Antwort:* +
+Wird für Deadlock-behandlung verwendet.
+Transaktion läuft nach gewisser Zeit ab. Alle locks werden aufgehoben.
+
+== Was sind Deadlocks?
+
+*Antwort:* +
+Ist zyklisches Warten -> beide Warten auf die Ressource des jeweils anderen.
+
+== Wie verhindert man Deadlocks?
+
+*Antwort:* +
+
+_two phase locking:_
+
+* lock Versuch auf alle benötigten Objekte.
+* Wenn die Objekte für einen Lock nicht freigegeben sind gibt er alle die bereits gelocked sind frei
+* Dies probiert er so lange bis es wieder funktioniert.
+
+_transaction scheduling:_
+
+* Es dürfen nur Transaktionen gleichzeitig laufen, die nicht die selben Objekte brauchen.
+

@@ -1,0 +1,118 @@
+= DCL & DDL
+
+== Was bedeutet DDL?
+
+*Antwort:* +
+Data Definition Language
+
+* beschreiben
+* ändern
+* entfernen
+
+== Wie erstellt man Tables?
+
+*Antwort:* +
+
+image::images/image-2022-03-30-21-34-14-054.png[]
+
+== Wie Droppt man Tables?
+
+*Antwort:* +
+
+image::images/image-2022-03-30-21-34-27-533.png[]
+
+== Wie Löscht man etwas von einer Tabelle?
+
+*Antwort:* +
+
+image::images/image-2022-03-30-21-35-00-492.png[]
+
+== Was sind Constraints?
+
+*Antwort:* +
+
+Spezielle Bedingungen
+
+== Nenne Constraints
+
+*Antwort:* +
+
+* Primary Key
+* Foreign Key
+* Not Null
+* Unique
+* Check
+* Default
+* Create Index
+
+== Wie kann man Tables bearbeiten?
+
+*Antwort:* +
+``Alter Table``
+
+image::images/image-2022-03-30-21-37-55-932.png[]
+
+== Wie löscht man Daten aus einer Tabelle aber nicht die Tabelle?
+
+*Antwort:* +
+``Truncate``
+
+image::images/image-2022-03-30-21-38-30-119.png[]
+
+== Was erstellt man mit View?
+
+*Antwort:* +
+Man erstellt eine virtuelle Tabelle
+
+image::images/image-2022-03-30-21-39-26-374.png[]
+
+== Was ist ein Index?
+
+*Antwort:* +
+
+* Inhaltsverzeichnis
+** für schnellere abfrage
+* Ständig aktualisiert
+* Clustered Indexes
+** sortiert nach Primary Key aufsteigend
+* Non Clustered Indexes
+** sortiert nach Referenzen für ein spezielles Feld
+
+
+== Wie erstellt man einen Index?
+
+*Antwort:* +
+
+image::images/image-2022-03-30-21-41-03-047.png[]
+
+== Was bedeutet DCL?
+
+*Antwort:* +
+Data Control Languaage
+
+* Datenüberwachungssprache
+* Berechtigungen
+** vergeben
+** entziehen
+
+== Wie kann man rechte zuweisen?
+
+*Antwort:* +
+``Grant``
+
+== Auf was kann man alles Rechte verteilen?
+
+*Antwort:* +
+
+image::images/image-2022-03-30-21-42-35-268.png[]
+
+image::images/image-2022-03-30-21-42-51-551.png[]
+
+== Wie kann man Rechte zurückrufen?
+
+*Antwort:* +
+``Rewoke``
+
+
+
+
