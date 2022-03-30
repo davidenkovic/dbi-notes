@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>DBI Notes</title>
+<title>Datawarehouse</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,70 +439,140 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>DBI Notes</h1>
+<h1>Datawarehouse</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_xml">1. XML</a></li>
-<li><a href="#_datenmodellierung">2. Datenmodellierung</a></li>
-<li><a href="#_concurrency">3. Concurrency</a></li>
-<li><a href="#_datawarehouse">4. Datawarehouse</a></li>
-<li><a href="#_dcl_ddl">5. DCL-DDL</a></li>
-<li><a href="#_nosql">6. NoSQL</a></li>
+<li><a href="#_was_ist_data_warehouse">1. Was ist Data Warehouse?</a></li>
+<li><a href="#_was_sind_die_hauptprozesse_von_data_warehouse">2. Was sind die Hauptprozesse von Data Warehouse?</a></li>
+<li><a href="#_was_ist_oltp_und_olap">3. Was ist OLTP und OLAP</a></li>
+<li><a href="#_beispiele_für_oltp_und_olap">4. Beispiele für OLTP und OLAP</a></li>
+<li><a href="#_was_ist_ein_sternschema">5. Was ist ein Sternschema</a></li>
+<li><a href="#_was_ist_ein_schneeflockenschema">6. Was ist ein Schneeflockenschema</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_xml"><a class="anchor" href="#_xml"></a>1. XML</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/xml.html">XML</a></p>
+<p><a href="https://davidenkovic.github.io/school-notes/datawarehouse.html">mitschrift von dave</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datenmodellierung"><a class="anchor" href="#_datenmodellierung"></a>2. Datenmodellierung</h2>
+<h2 id="_was_ist_data_warehouse"><a class="anchor" href="#_was_ist_data_warehouse"></a>1. Was ist Data Warehouse?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/datenmodellierung.html">Datenmodellierung</a></p>
+<p><strong>Antwort:</strong><br>
+Eine physische Datenbank mit integrierter Sicht auf beliebige Daten zu
+Analysezwecken.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_concurrency"><a class="anchor" href="#_concurrency"></a>3. Concurrency</h2>
+<h2 id="_was_sind_die_hauptprozesse_von_data_warehouse"><a class="anchor" href="#_was_sind_die_hauptprozesse_von_data_warehouse"></a>2. Was sind die Hauptprozesse von Data Warehouse?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/concurrency.html">Concurrency</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Datenbeschaffung</p>
+</li>
+<li>
+<p>Datenhaltung</p>
+</li>
+<li>
+<p>Datenversorgung</p>
+</li>
+<li>
+<p>Datenauswertung</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datawarehouse"><a class="anchor" href="#_datawarehouse"></a>4. Datawarehouse</h2>
+<h2 id="_was_ist_oltp_und_olap"><a class="anchor" href="#_was_ist_oltp_und_olap"></a>3. Was ist OLTP und OLAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/datawarehouse.html">Datawarehouse</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="paragraph">
+<p>Oltp &#8594; online transaction protokoll (write, update, delete)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ist im überreich von MB bis GB groß</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Olap &#8594; online analytic protokoll (select statements)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ist im überreich von GB bis TB groß</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_dcl_ddl"><a class="anchor" href="#_dcl_ddl"></a>5. DCL-DDL</h2>
+<h2 id="_beispiele_für_oltp_und_olap"><a class="anchor" href="#_beispiele_für_oltp_und_olap"></a>4. Beispiele für OLTP und OLAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/dcl-ddl.html">DCL-DDL</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="paragraph">
+<p>OLTP: Buchen eines Flugs in einem Flugreservierungssystem</p>
+</div>
+<div class="paragraph">
+<p>OLAP: Analyse der Auslastung von Transatlantikflüge der letzten zwei Jahre</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nosql"><a class="anchor" href="#_nosql"></a>6. NoSQL</h2>
+<h2 id="_was_ist_ein_sternschema"><a class="anchor" href="#_was_ist_ein_sternschema"></a>5. Was ist ein Sternschema</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Datenbankstruktur mit einer Basistabelle, um die sternenförmig die
+Referenztabellen angeordnet sind. Es besteht aus einer Basistabelle und mehreren Referenztabellen.</p>
+</div>
+<div class="paragraph">
+<p>Basistabelle &#8594; Faktentabelle<br>
+Referenztabellen &#8594; Dimensionstabellen</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-18-29-201.png" alt="image 2022 03 30 21 18 29 201">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_ist_ein_schneeflockenschema"><a class="anchor" href="#_was_ist_ein_schneeflockenschema"></a>6. Was ist ein Schneeflockenschema</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Normalisierte Weiterführung vom Sternschema</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-20-25-588.png" alt="image 2022 03 30 21 20 25 588">
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-30 19:45:31 UTC
+Last updated 2022-03-30 19:20:29 UTC
 </div>
 </div>
 </body>

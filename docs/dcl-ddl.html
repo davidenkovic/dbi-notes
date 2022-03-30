@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>DBI Notes</title>
+<title>DCL &amp; DDL</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,70 +439,303 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>DBI Notes</h1>
+<h1>DCL &amp; DDL</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_xml">1. XML</a></li>
-<li><a href="#_datenmodellierung">2. Datenmodellierung</a></li>
-<li><a href="#_concurrency">3. Concurrency</a></li>
-<li><a href="#_datawarehouse">4. Datawarehouse</a></li>
-<li><a href="#_dcl_ddl">5. DCL-DDL</a></li>
-<li><a href="#_nosql">6. NoSQL</a></li>
+<li><a href="#_was_bedeutet_ddl">1. Was bedeutet DDL?</a></li>
+<li><a href="#_wie_erstellt_man_tables">2. Wie erstellt man Tables?</a></li>
+<li><a href="#_wie_droppt_man_tables">3. Wie Droppt man Tables?</a></li>
+<li><a href="#_wie_löscht_man_etwas_von_einer_tabelle">4. Wie Löscht man etwas von einer Tabelle?</a></li>
+<li><a href="#_was_sind_constraints">5. Was sind Constraints?</a></li>
+<li><a href="#_nenne_constraints">6. Nenne Constraints</a></li>
+<li><a href="#_wie_kann_man_tables_bearbeiten">7. Wie kann man Tables bearbeiten?</a></li>
+<li><a href="#_wie_löscht_man_daten_aus_einer_tabelle_aber_nicht_die_tabelle">8. Wie löscht man Daten aus einer Tabelle aber nicht die Tabelle?</a></li>
+<li><a href="#_was_erstellt_man_mit_view">9. Was erstellt man mit View?</a></li>
+<li><a href="#_was_ist_ein_index">10. Was ist ein Index?</a></li>
+<li><a href="#_wie_erstellt_man_einen_index">11. Wie erstellt man einen Index?</a></li>
+<li><a href="#_was_bedeutet_dcl">12. Was bedeutet DCL?</a></li>
+<li><a href="#_wie_kann_man_rechte_zuweisen">13. Wie kann man rechte zuweisen?</a></li>
+<li><a href="#_auf_was_kann_man_alles_rechte_verteilen">14. Auf was kann man alles Rechte verteilen?</a></li>
+<li><a href="#_wie_kann_man_rechte_zurückrufen">15. Wie kann man Rechte zurückrufen?</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_xml"><a class="anchor" href="#_xml"></a>1. XML</h2>
+<h2 id="_was_bedeutet_ddl"><a class="anchor" href="#_was_bedeutet_ddl"></a>1. Was bedeutet DDL?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/xml.html">XML</a></p>
+<p><strong>Antwort:</strong><br>
+Data Definition Language</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>beschreiben</p>
+</li>
+<li>
+<p>ändern</p>
+</li>
+<li>
+<p>entfernen</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datenmodellierung"><a class="anchor" href="#_datenmodellierung"></a>2. Datenmodellierung</h2>
+<h2 id="_wie_erstellt_man_tables"><a class="anchor" href="#_wie_erstellt_man_tables"></a>2. Wie erstellt man Tables?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/datenmodellierung.html">Datenmodellierung</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-34-14-054.png" alt="image 2022 03 30 21 34 14 054">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_concurrency"><a class="anchor" href="#_concurrency"></a>3. Concurrency</h2>
+<h2 id="_wie_droppt_man_tables"><a class="anchor" href="#_wie_droppt_man_tables"></a>3. Wie Droppt man Tables?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/concurrency.html">Concurrency</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-34-27-533.png" alt="image 2022 03 30 21 34 27 533">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datawarehouse"><a class="anchor" href="#_datawarehouse"></a>4. Datawarehouse</h2>
+<h2 id="_wie_löscht_man_etwas_von_einer_tabelle"><a class="anchor" href="#_wie_löscht_man_etwas_von_einer_tabelle"></a>4. Wie Löscht man etwas von einer Tabelle?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/datawarehouse.html">Datawarehouse</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-35-00-492.png" alt="image 2022 03 30 21 35 00 492">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_dcl_ddl"><a class="anchor" href="#_dcl_ddl"></a>5. DCL-DDL</h2>
+<h2 id="_was_sind_constraints"><a class="anchor" href="#_was_sind_constraints"></a>5. Was sind Constraints?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/dcl-ddl.html">DCL-DDL</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="paragraph">
+<p>Spezielle Bedingungen</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nosql"><a class="anchor" href="#_nosql"></a>6. NoSQL</h2>
+<h2 id="_nenne_constraints"><a class="anchor" href="#_nenne_constraints"></a>6. Nenne Constraints</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Primary Key</p>
+</li>
+<li>
+<p>Foreign Key</p>
+</li>
+<li>
+<p>Not Null</p>
+</li>
+<li>
+<p>Unique</p>
+</li>
+<li>
+<p>Check</p>
+</li>
+<li>
+<p>Default</p>
+</li>
+<li>
+<p>Create Index</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_kann_man_tables_bearbeiten"><a class="anchor" href="#_wie_kann_man_tables_bearbeiten"></a>7. Wie kann man Tables bearbeiten?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+<code>Alter Table</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-37-55-932.png" alt="image 2022 03 30 21 37 55 932">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_löscht_man_daten_aus_einer_tabelle_aber_nicht_die_tabelle"><a class="anchor" href="#_wie_löscht_man_daten_aus_einer_tabelle_aber_nicht_die_tabelle"></a>8. Wie löscht man Daten aus einer Tabelle aber nicht die Tabelle?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+<code>Truncate</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-38-30-119.png" alt="image 2022 03 30 21 38 30 119">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_erstellt_man_mit_view"><a class="anchor" href="#_was_erstellt_man_mit_view"></a>9. Was erstellt man mit View?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Man erstellt eine virtuelle Tabelle</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-39-26-374.png" alt="image 2022 03 30 21 39 26 374">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_ist_ein_index"><a class="anchor" href="#_was_ist_ein_index"></a>10. Was ist ein Index?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Inhaltsverzeichnis</p>
+<div class="ulist">
+<ul>
+<li>
+<p>für schnellere abfrage</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ständig aktualisiert</p>
+</li>
+<li>
+<p>Clustered Indexes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>sortiert nach Primary Key aufsteigend</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Non Clustered Indexes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>sortiert nach Referenzen für ein spezielles Feld</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_erstellt_man_einen_index"><a class="anchor" href="#_wie_erstellt_man_einen_index"></a>11. Wie erstellt man einen Index?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-41-03-047.png" alt="image 2022 03 30 21 41 03 047">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_bedeutet_dcl"><a class="anchor" href="#_was_bedeutet_dcl"></a>12. Was bedeutet DCL?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Data Control Languaage</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Datenüberwachungssprache</p>
+</li>
+<li>
+<p>Berechtigungen</p>
+<div class="ulist">
+<ul>
+<li>
+<p>vergeben</p>
+</li>
+<li>
+<p>entziehen</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_kann_man_rechte_zuweisen"><a class="anchor" href="#_wie_kann_man_rechte_zuweisen"></a>13. Wie kann man rechte zuweisen?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+<code>Grant</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auf_was_kann_man_alles_rechte_verteilen"><a class="anchor" href="#_auf_was_kann_man_alles_rechte_verteilen"></a>14. Auf was kann man alles Rechte verteilen?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-42-35-268.png" alt="image 2022 03 30 21 42 35 268">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-21-42-51-551.png" alt="image 2022 03 30 21 42 51 551">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_kann_man_rechte_zurückrufen"><a class="anchor" href="#_wie_kann_man_rechte_zurückrufen"></a>15. Wie kann man Rechte zurückrufen?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+<code>Rewoke</code></p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-30 19:45:31 UTC
+Last updated 2022-03-30 19:43:32 UTC
 </div>
 </div>
 </body>

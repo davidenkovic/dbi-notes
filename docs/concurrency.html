@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>DBI Notes</title>
+<title>ConCurrency</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,70 +439,165 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>DBI Notes</h1>
+<h1>ConCurrency</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_xml">1. XML</a></li>
-<li><a href="#_datenmodellierung">2. Datenmodellierung</a></li>
-<li><a href="#_concurrency">3. Concurrency</a></li>
-<li><a href="#_datawarehouse">4. Datawarehouse</a></li>
-<li><a href="#_dcl_ddl">5. DCL-DDL</a></li>
-<li><a href="#_nosql">6. NoSQL</a></li>
+<li><a href="#_was_bedeutet_acid">1. Was bedeutet ACID?</a></li>
+<li><a href="#_warum_heißt_es_atomicity">2. Warum heißt es Atomicity?</a></li>
+<li><a href="#_welches_gegenstück_zu_acid_gibt_es">3. Welches gegenstück zu ACID gibt es?</a></li>
+<li><a href="#_was_bedeutet_dirty_read">4. Was bedeutet Dirty Read?</a></li>
+<li><a href="#_was_bedeutet_dirty_write">5. Was bedeutet Dirty Write?</a></li>
+<li><a href="#_für_was_werden_sperren_verwendet">6. FÜr was werden Sperren verwendet?</a></li>
+<li><a href="#_was_sind_transaktionen">7. Was sind Transaktionen</a></li>
+<li><a href="#_für_was_werden_timeouts_verwendet">8. Für was werden Timeouts verwendet?</a></li>
+<li><a href="#_was_sind_deadlocks">9. Was sind Deadlocks?</a></li>
+<li><a href="#_wie_verhindert_man_deadlocks">10. Wie verhindert man Deadlocks?</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_xml"><a class="anchor" href="#_xml"></a>1. XML</h2>
+<h2 id="_was_bedeutet_acid"><a class="anchor" href="#_was_bedeutet_acid"></a>1. Was bedeutet ACID?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/xml.html">XML</a></p>
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Atomicity:<br>
+Entweder werden alle oder keine Werteänderungen einer Transaktion in den Datenbankzustand übernommen</p>
+</li>
+<li>
+<p>Consistency:<br>
+Am Anfang und am Ende einer Transaktion ist alles consistent.</p>
+</li>
+<li>
+<p>Isolation:<br>
+Transaktionen sollen sich nicht gegenseitig beeinflussen. Gelöst mit
+Isolation-ebenen oder Locks.</p>
+</li>
+<li>
+<p>Durability:<br>
+Daten sind dauerhaft gespeichert auch bei Stromausfall gehen sie nicht verloren.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datenmodellierung"><a class="anchor" href="#_datenmodellierung"></a>2. Datenmodellierung</h2>
+<h2 id="_warum_heißt_es_atomicity"><a class="anchor" href="#_warum_heißt_es_atomicity"></a>2. Warum heißt es Atomicity?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/datenmodellierung.html">Datenmodellierung</a></p>
+<p><strong>Antwort:</strong><br>
+Atom ist unteilbar</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_concurrency"><a class="anchor" href="#_concurrency"></a>3. Concurrency</h2>
+<h2 id="_welches_gegenstück_zu_acid_gibt_es"><a class="anchor" href="#_welches_gegenstück_zu_acid_gibt_es"></a>3. Welches gegenstück zu ACID gibt es?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/concurrency.html">Concurrency</a></p>
+<p><strong>Antwort:</strong><br>
+NoSQL-DBs verwenden cap-theorem</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datawarehouse"><a class="anchor" href="#_datawarehouse"></a>4. Datawarehouse</h2>
+<h2 id="_was_bedeutet_dirty_read"><a class="anchor" href="#_was_bedeutet_dirty_read"></a>4. Was bedeutet Dirty Read?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/datawarehouse.html">Datawarehouse</a></p>
+<p><strong>Antwort:</strong><br>
+Daten welche in einer noch nicht geschlossenen Datenbank liegen werden gelesen</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_dcl_ddl"><a class="anchor" href="#_dcl_ddl"></a>5. DCL-DDL</h2>
+<h2 id="_was_bedeutet_dirty_write"><a class="anchor" href="#_was_bedeutet_dirty_write"></a>5. Was bedeutet Dirty Write?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://davidenkovic.github.io/dbi-notes/dcl-ddl.html">DCL-DDL</a></p>
+<p><strong>Antwort:</strong><br>
+Wenn zwei Transaktionen sich "vermischen" (Daten von mehreren Transaktionen sich kreuzen)</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_nosql"><a class="anchor" href="#_nosql"></a>6. NoSQL</h2>
+<h2 id="_für_was_werden_sperren_verwendet"><a class="anchor" href="#_für_was_werden_sperren_verwendet"></a>6. FÜr was werden Sperren verwendet?</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Sperren werden in Datenbanksystemen eingesetzt, um die Forderung der Isolation des ACID-Prinzips bei Transaktionen zu erfüllen</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_sind_transaktionen"><a class="anchor" href="#_was_sind_transaktionen"></a>7. Was sind Transaktionen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Transaktionen sind zusammenhängende Befehle, wo entweder alle ausgeführt werden
+(commit) oder alle nicht ausgeführt werden (rollback). BSP: Überweisung.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_für_was_werden_timeouts_verwendet"><a class="anchor" href="#_für_was_werden_timeouts_verwendet"></a>8. Für was werden Timeouts verwendet?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Wird für Deadlock-behandlung verwendet.
+Transaktion läuft nach gewisser Zeit ab. Alle locks werden aufgehoben.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_sind_deadlocks"><a class="anchor" href="#_was_sind_deadlocks"></a>9. Was sind Deadlocks?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Ist zyklisches Warten &#8594; beide Warten auf die Ressource des jeweils anderen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_verhindert_man_deadlocks"><a class="anchor" href="#_wie_verhindert_man_deadlocks"></a>10. Wie verhindert man Deadlocks?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="paragraph">
+<p><em>two phase locking:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>lock Versuch auf alle benötigten Objekte.</p>
+</li>
+<li>
+<p>Wenn die Objekte für einen Lock nicht freigegeben sind gibt er alle die bereits gelocked sind frei</p>
+</li>
+<li>
+<p>Dies probiert er so lange bis es wieder funktioniert.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>transaction scheduling:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Es dürfen nur Transaktionen gleichzeitig laufen, die nicht die selben Objekte brauchen.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-30 19:45:31 UTC
+Last updated 2022-03-30 19:30:34 UTC
 </div>
 </div>
 </body>
