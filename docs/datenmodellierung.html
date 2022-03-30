@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>DBI Notes</title>
+<title>Datenmodellierung</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,38 +439,178 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>DBI Notes</h1>
+<h1>Datenmodellierung</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_xml">1. XML</a></li>
-<li><a href="#_datenmodellierung">2. Datenmodellierung</a></li>
+<li><a href="#_was_ist_datenmodellierung">1. Was ist Datenmodellierung</a></li>
+<li><a href="#_was_ist_ein_er_model">2. Was ist ein ER-Model</a></li>
+<li><a href="#_11_beziehung">3. 1:1 Beziehung</a></li>
+<li><a href="#_1n_beziehung">4. 1:n Beziehung</a></li>
+<li><a href="#_mn_beziehung">5. m:n Beziehung</a></li>
+<li><a href="#_welche_notation_gibt_es">6. Welche Notation gibt es?</a></li>
+<li><a href="#_was_sind_redundanzen">7. Was sind Redundanzen?</a></li>
+<li><a href="#_was_ist_eine_redundanzfreien_datenbank">8. Was ist eine redundanzfreien Datenbank?</a></li>
+<li><a href="#_was_wäre_eine_lösung">9. Was wäre eine Lösung?</a></li>
+<li><a href="#_wie_lautet_die_nullte_normalform">10. Wie lautet die Nullte Normalform?</a></li>
+<li><a href="#_wie_lautet_die_erste_normalform_1nf">11. Wie lautet die Erste Normalform (1NF)?</a></li>
+<li><a href="#_wie_lautet_die_zweite_normalform_2nf">12. Wie lautet die Zweite Normalform (2NF)?</a></li>
+<li><a href="#_wie_lautet_die_dritte_normalform_3nf">13. Wie lautet die Dritte Normalform (3NF)?</a></li>
+<li><a href="#_was_sind_anomalien_in_datenbanken">14. Was sind Anomalien in Datenbanken?</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_xml"><a class="anchor" href="#_xml"></a>1. XML</h2>
+<h2 id="_was_ist_datenmodellierung"><a class="anchor" href="#_was_ist_datenmodellierung"></a>1. Was ist Datenmodellierung</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antwort:</strong><br>
-<a href="https://davidenkovic.github.io/dbi-notes/xml.html">XML</a></p>
+Es dient als visuelle Darstellung von Datenobjekten und zuordnungen</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datenmodellierung"><a class="anchor" href="#_datenmodellierung"></a>2. Datenmodellierung</h2>
+<h2 id="_was_ist_ein_er_model"><a class="anchor" href="#_was_ist_ein_er_model"></a>2. Was ist ein ER-Model</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antwort:</strong><br>
-<a href="https://davidenkovic.github.io/dbi-notes/datenmodellierung.html">Datenmodellierung</a></p>
+Entity-Relationship-Modell und dient als Grundlage für einen Datenbankentwurf</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_11_beziehung"><a class="anchor" href="#_11_beziehung"></a>3. 1:1 Beziehung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Jedem Datensatz aus der Tabelle A ist nur ein passender Datensatz der Tabelle B zugeordnet.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1n_beziehung"><a class="anchor" href="#_1n_beziehung"></a>4. 1:n Beziehung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+In einem Datensatz können in der Tabelle A mehrere passende Datensätze der Tabelle B eindeutig zugeordnet sein, aber in einem Datensatz der Tabelle B nie mehr als ein Datensatz der Tabelle A</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mn_beziehung"><a class="anchor" href="#_mn_beziehung"></a>5. m:n Beziehung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+in Tabelle A können mehrere passende Datensätzen in Tabelle B zugeordnet sein und umgekehrt.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_welche_notation_gibt_es"><a class="anchor" href="#_welche_notation_gibt_es"></a>6. Welche Notation gibt es?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-2022-03-30-19-52-42-021.png" alt="image 2022 03 30 19 52 42 021">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_sind_redundanzen"><a class="anchor" href="#_was_sind_redundanzen"></a>7. Was sind Redundanzen?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Redundanzen in Datenbanken sind ein Zeichen für ein schlechtes Datenbankdesign zum
+Beispiel doppelte Informationen in einer Datenbank.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_ist_eine_redundanzfreien_datenbank"><a class="anchor" href="#_was_ist_eine_redundanzfreien_datenbank"></a>8. Was ist eine redundanzfreien Datenbank?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Wenn alle doppelte Informationen entfernt werden können, ohne das ein Informationsverlust stattfindet</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_wäre_eine_lösung"><a class="anchor" href="#_was_wäre_eine_lösung"></a>9. Was wäre eine Lösung?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Die Normalisierung</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_lautet_die_nullte_normalform"><a class="anchor" href="#_wie_lautet_die_nullte_normalform"></a>10. Wie lautet die Nullte Normalform?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Alle Informationen eine Tabelle sind vorhanden und noch unnormalisiert. (CSV Tabelle)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_lautet_die_erste_normalform_1nf"><a class="anchor" href="#_wie_lautet_die_erste_normalform_1nf"></a>11. Wie lautet die Erste Normalform (1NF)?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Ist gegeben, wenn alle Informationen in einer Tabelle atomar vorliegen
+bedeutet, dass jede Information innerhalb einer Tabelle eine eigene Tabellenspalte
+bekommt</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_lautet_die_zweite_normalform_2nf"><a class="anchor" href="#_wie_lautet_die_zweite_normalform_2nf"></a>12. Wie lautet die Zweite Normalform (2NF)?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Ist erfüllt, wenn sie in der ersten NF ist und wenn jedes Nichtschlüsselattribut von jedem Schlüsselkandidaten voll funktional abhängig ist.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_lautet_die_dritte_normalform_3nf"><a class="anchor" href="#_wie_lautet_die_dritte_normalform_3nf"></a>13. Wie lautet die Dritte Normalform (3NF)?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Ist erfüllt, wenn sie in der ersten und zweiten NF ist und wenn kein Nichtschlüsselattribut von nur einem Teilschlüsselattribute abhängt</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_was_sind_anomalien_in_datenbanken"><a class="anchor" href="#_was_sind_anomalien_in_datenbanken"></a>14. Was sind Anomalien in Datenbanken?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Antwort:</strong><br>
+Sie treten bei nicht normalisierter Datenbank auf.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Einfüge(Insert)-Anomalie</p>
+</li>
+<li>
+<p>Änderungs(Update)-Anomalie</p>
+</li>
+<li>
+<p>Lösch(Delete)-Anomalie</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-30 17:48:24 UTC
+Last updated 2022-03-30 18:00:11 UTC
 </div>
 </div>
 </body>
