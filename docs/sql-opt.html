@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>XML</title>
+<title>SQL Optimierung</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,276 +440,77 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>XML</h1>
+<h1>SQL Optimierung</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_was_bedeutet_xml">1. Was bedeutet XML?</a></li>
-<li><a href="#_was_ist_der_nachfolger_von_xml">2. Was ist der nachfolger von XML?</a></li>
-<li><a href="#_auf_was_basiert_xml">3. Auf was basiert XML?</a></li>
-<li><a href="#_für_was_wird_xml_verwendet">4. Für was wird XML verwendet?</a></li>
-<li><a href="#_gibt_es_vordefinierte_tags_und_was_sind_vordefinierte_tags">5. Gibt es Vordefinierte Tags und was sind Vordefinierte Tags?</a></li>
-<li><a href="#_was_bedeutet_dtd_document_type_definition">6. Was bedeutet DTD (Document Type Definition)?</a></li>
-<li><a href="#_wie_werden_entities_definiert_in_dtd">7. Wie werden Entities definiert in DTD?</a></li>
-<li><a href="#_welche_alternative_gibt_es_zu_dtd">8. Welche alternative gibt es zu DTD?</a></li>
-<li><a href="#_welche_vorteile_gibt_es_dadurch">9. Welche vorteile gibt es dadurch?</a></li>
-<li><a href="#_was_bedeutet_svg">10. Was bedeutet SVG?</a></li>
-<li><a href="#_für_was_svg">11. Für was SVG?</a></li>
-<li><a href="#_was_bedeutet_ajax">12. Was bedeutet AJAX?</a></li>
-<li><a href="#_was_mach_ajax">13. Was mach AJAX?</a></li>
-<li><a href="#_was_bedeutet_dom">14. Was bedeutet DOM?</a></li>
-<li><a href="#_was_macht_dom">15. Was macht DOM?</a></li>
-<li><a href="#_was_bedeutet_sax">16. Was bedeutet SAX?</a></li>
-<li><a href="#_was_macht_sax">17. Was macht SAX</a></li>
-<li><a href="#_was_sind_elemente">18. Was sind Elemente?</a></li>
-<li><a href="#_was_ist_ein_tag">19. Was ist ein Tag?</a></li>
-<li><a href="#_wan_ist_ein_xml_dokument_gültig">20. Wan ist ein XML Dokument gültig?=</a></li>
-<li><a href="#_was_ist_ein_parser">21. Was ist ein Parser?</a></li>
+<li><a href="#_was_ist_wichtig">1. Was ist wichtig</a></li>
+<li><a href="#_was_ist_eine_indizes">2. Was ist eine Indizes?</a></li>
+<li><a href="#_gibt_es_eine_zeile_welche_automatischen_indizes_benützt">3. Gibt es eine Zeile welche automatischen Indizes benützt?</a></li>
+<li><a href="#_was_bedeutet_die_kostenbasierte_optimierung">4. Was bedeutet die kostenbasierte Optimierung</a></li>
+<li><a href="#_was_passiert_bei_einem_hint">5. Was passiert bei einem Hint</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Die Extensible Markup Language abgekürzt XML, ist eine Auszeichnungssprache zur Darstellung
-hierarchisch
-strukturierter Daten im Format einer Textdatei, die sowohl von Menschen als auch von
-Maschinenlesbar ist.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_was_bedeutet_xml"><a class="anchor" href="#_was_bedeutet_xml"></a>1. Was bedeutet XML?</h2>
+<h2 id="_was_ist_wichtig"><a class="anchor" href="#_was_ist_wichtig"></a>1. Was ist wichtig</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Executable Markup Language</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_ist_der_nachfolger_von_xml"><a class="anchor" href="#_was_ist_der_nachfolger_von_xml"></a>2. Was ist der nachfolger von XML?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-JSON</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_auf_was_basiert_xml"><a class="anchor" href="#_auf_was_basiert_xml"></a>3. Auf was basiert XML?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-HTML</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_für_was_wird_xml_verwendet"><a class="anchor" href="#_für_was_wird_xml_verwendet"></a>4. Für was wird XML verwendet?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Datentausch über das Internet. Es wurde designed um Daten zu befördern und nicht zu
-veranschaulichen.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gibt_es_vordefinierte_tags_und_was_sind_vordefinierte_tags"><a class="anchor" href="#_gibt_es_vordefinierte_tags_und_was_sind_vordefinierte_tags"></a>5. Gibt es Vordefinierte Tags und was sind Vordefinierte Tags?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Nein. Vordefinierte Tags sind zum Beispiel &lt;p&gt; oder &lt;h1&gt;.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_bedeutet_dtd_document_type_definition"><a class="anchor" href="#_was_bedeutet_dtd_document_type_definition"></a>6. Was bedeutet DTD (Document Type Definition)?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Definiert die Regeln für ein XML Dokument. Definiert die Struktur und die Elemente und Attribute eines XML-Dokuments.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wie_werden_entities_definiert_in_dtd"><a class="anchor" href="#_wie_werden_entities_definiert_in_dtd"></a>7. Wie werden Entities definiert in DTD?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/image-2022-03-30-18-24-52-549.png" alt="image 2022 03 30 18 24 52 549">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_welche_alternative_gibt_es_zu_dtd"><a class="anchor" href="#_welche_alternative_gibt_es_zu_dtd"></a>8. Welche alternative gibt es zu DTD?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-XML-Schema</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_welche_vorteile_gibt_es_dadurch"><a class="anchor" href="#_welche_vorteile_gibt_es_dadurch"></a>9. Welche vorteile gibt es dadurch?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br></p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>in XML geschrieben</p>
+<p>keine select *</p>
 </li>
 <li>
-<p>Unterstützt Datentypen</p>
+<p>reihenfolge von joins</p>
 </li>
 <li>
-<p>Unterstützt XML Namespaces</p>
-</li>
-<li>
-<p>Erweiterbar</p>
+<p>kein distinct</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_was_bedeutet_svg"><a class="anchor" href="#_was_bedeutet_svg"></a>10. Was bedeutet SVG?</h2>
+<h2 id="_was_ist_eine_indizes"><a class="anchor" href="#_was_ist_eine_indizes"></a>2. Was ist eine Indizes?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antwort:</strong><br>
-Scalable Vector Graphics</p>
+Index</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_für_was_svg"><a class="anchor" href="#_für_was_svg"></a>11. Für was SVG?</h2>
+<h2 id="_gibt_es_eine_zeile_welche_automatischen_indizes_benützt"><a class="anchor" href="#_gibt_es_eine_zeile_welche_automatischen_indizes_benützt"></a>3. Gibt es eine Zeile welche automatischen Indizes benützt?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antwort:</strong><br>
-Es ist eine XML basierte Markup Language um 2D Grafiken zu visualisieren.</p>
+Primary Key</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_was_bedeutet_ajax"><a class="anchor" href="#_was_bedeutet_ajax"></a>12. Was bedeutet AJAX?</h2>
+<h2 id="_was_bedeutet_die_kostenbasierte_optimierung"><a class="anchor" href="#_was_bedeutet_die_kostenbasierte_optimierung"></a>4. Was bedeutet die kostenbasierte Optimierung</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antwort:</strong><br>
-Asynchronous JavaScript And XML</p>
+Keine Euros, sondern Zeit als Kosten</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_was_mach_ajax"><a class="anchor" href="#_was_mach_ajax"></a>13. Was mach AJAX?</h2>
+<h2 id="_was_passiert_bei_einem_hint"><a class="anchor" href="#_was_passiert_bei_einem_hint"></a>5. Was passiert bei einem Hint</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Antwort:</strong><br>
-Es Updated eine webpage ohne sie selber neu zu laden und holt neue Daten vom Server.
-Nicht nur bekommt die Seite neue Daten, sondern sie schickt sie auch im Hintergrund.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_bedeutet_dom"><a class="anchor" href="#_was_bedeutet_dom"></a>14. Was bedeutet DOM?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Document Object Model</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_macht_dom"><a class="anchor" href="#_was_macht_dom"></a>15. Was macht DOM?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Es ist ein Standardobjektmodell für XML, welches ein XML-Dokument als Baumstruktur darstellt.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_bedeutet_sax"><a class="anchor" href="#_was_bedeutet_sax"></a>16. Was bedeutet SAX?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Simple Api for XML</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_macht_sax"><a class="anchor" href="#_was_macht_sax"></a>17. Was macht SAX</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Ist eine ereignisorientierte Schnittstelle zum Parsen von XML-Dokumenten.
-Im Unterschied zu DOM ist sie ereignisorientiert.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_sind_elemente"><a class="anchor" href="#_was_sind_elemente"></a>18. Was sind Elemente?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Elemente können Text oder weitere Elemente beinhalten.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_ist_ein_tag"><a class="anchor" href="#_was_ist_ein_tag"></a>19. Was ist ein Tag?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Tags werden verwendet um Elemente auszuzeichnen.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Starttags &#8594; Beginn eines Elements</p>
-</li>
-<li>
-<p>Endtags &#8594; Ende eines Elements</p>
-</li>
-<li>
-<p>leertags &#8594; Element ohne Inhalt</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_wan_ist_ein_xml_dokument_gültig"><a class="anchor" href="#_wan_ist_ein_xml_dokument_gültig"></a>20. Wan ist ein XML Dokument gültig?=</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Antwort:</strong><br>
-Wenn das Dokument wohlgeformt ist (DTD, XML-Schema)</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_was_ist_ein_parser"><a class="anchor" href="#_was_ist_ein_parser"></a>21. Was ist ein Parser?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Liest XML Dateien aus und prüft diese eventuell</p>
+Eingriff in dem Optimiser</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-31 09:06:38 UTC
+Last updated 2022-03-31 09:41:18 UTC
 </div>
 </div>
 </body>
