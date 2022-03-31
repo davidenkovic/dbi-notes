@@ -31,3 +31,7 @@ https://davidenkovic.github.io/school-notes/jpa-test.html[JPA]
 == PL/SQL
 
 https://davidenkovic.github.io/dbi-notes/pl-sql.html[PL-SQL]
+
+== SQL-Optimierung
+
+https://davidenkovic.github.io/dbi-notes/sql-opt.html[SQL-Optimierung]

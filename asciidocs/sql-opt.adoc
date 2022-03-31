@@ -1,0 +1,30 @@
+= SQL Optimierung
+
+==  Was ist wichtig
+
+* keine select *
+* reihenfolge von joins
+* kein distinct
+
+== Was ist eine Indizes?
+
+*Antwort:* +
+Index
+
+== Gibt es eine Zeile welche automatischen Indizes benützt?
+
+*Antwort:* +
+Primary Key
+
+== Was bedeutet die kostenbasierte Optimierung
+
+*Antwort:* +
+Keine Euros, sondern Zeit als Kosten
+
+== Was passiert bei einem Hint
+
+*Antwort:* +
+Eingriff in dem Optimiser
+
+
+
